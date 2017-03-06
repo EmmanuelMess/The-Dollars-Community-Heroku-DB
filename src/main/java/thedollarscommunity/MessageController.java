@@ -18,7 +18,7 @@ public class MessageController {
 		this.repository = repository;
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/message/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Message> get(@PathVariable("id") Long id) {
 		Message message = repository.findOne(id);
 		if (message == null) {
@@ -27,7 +27,7 @@ public class MessageController {
 		return new ResponseEntity<>(message, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/new", method = RequestMethod.POST)
+	@RequestMapping(value = "/message/new", method = RequestMethod.POST)
 	public ResponseEntity<Message> update(@RequestBody Message message) {
 		repository.save(message);
 		return get(message.getId());
