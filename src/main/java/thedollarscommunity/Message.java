@@ -23,7 +23,7 @@ public class Message {
 	private boolean isimage;
 
 	private String msg;
-	private ByteArray img;
+	//private ByteArray img;
 
 	public Long getId() {
 		return id;
@@ -57,11 +57,11 @@ public class Message {
 		this.msg = msg;
 	}
 
-	public ByteArray getImg() {
-		return img;
-	}
-	public void setImg(ByteArray img) {
-		this.img = img;
-	}
+	//public ByteArray getImg() {
+	//	return img;
+	//}
+	//public void setImg(ByteArray img) {
+	//	this.img = img;
+	//}
 
 }
