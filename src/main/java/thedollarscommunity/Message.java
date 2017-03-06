@@ -18,9 +18,9 @@ public class Message {
 	@NotEmpty
 	private String nick;
 	@NotEmpty
-	private Long time;
+	private long time;
 	@NotEmpty
-	private Boolean isimage;
+	private boolean isimage;
 
 	private String msg;
 	private ByteArray img;

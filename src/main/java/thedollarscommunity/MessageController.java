@@ -9,12 +9,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/message")
-public class BookController {
+public class MessageController {
 
-	private BookRepository repository;
+	private MessageRepository repository;
 
 	@Autowired
-	public BookController(BookRepository repository) {
+	public MessageController(MessageRepository repository) {
 		this.repository = repository;
 	}
 
