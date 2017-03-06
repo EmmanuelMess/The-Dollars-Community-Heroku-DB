@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/books")
+@RequestMapping("/message")
 public class BookController {
 
 	private BookRepository repository;
@@ -21,10 +21,10 @@ public class BookController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Message> get(@PathVariable("id") Long id) {
 		Message message = repository.findOne(id);
-		if (null == message) {
-			return new ResponseEntity<Message>(HttpStatus.NOT_FOUND);
+		if (message == null) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<Message>(message, HttpStatus.OK);
+		return new ResponseEntity<>(message, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/new", method = RequestMethod.POST)

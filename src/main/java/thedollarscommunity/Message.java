@@ -17,8 +17,11 @@ public class Message {
 
 	@NotEmpty
 	private String nick;
+	@NotEmpty
 	private Long time;
+	@NotEmpty
 	private Boolean isimage;
+
 	private String msg;
 	private ByteArray img;
 
@@ -29,41 +32,36 @@ public class Message {
 	public String getNick() {
 		return nick;
 	}
-
-	public void setNick(String isbn) {
-		this.nick = isbn;
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 
-	public String getTime() {
-		return nick;
+	public long getTime() {
+		return time;
+	}
+	public void setTime(long time) {
+		this.time = time;
 	}
 
-	public void setTime(String isbn) {
-		this.nick = isbn;
+	public boolean getIsImage() {
+		return isimage;
 	}
-
-	public String getIsImage() {
-		return nick;
-	}
-
-	public void setIsImage(String isbn) {
-		this.nick = isbn;
+	public void setIsImage(boolean isimage) {
+		this.isimage = isimage;
 	}
 
 	public String getMsg() {
-		return nick;
+		return msg;
+	}
+	public void setMsg(String msg) {
+		this.msg = msg;
 	}
 
-	public void setMsg(String isbn) {
-		this.nick = isbn;
+	public ByteArray getImg() {
+		return img;
 	}
-
-	public String getImg() {
-		return nick;
-	}
-
-	public void setImg(String isbn) {
-		this.nick = isbn;
+	public void setImg(ByteArray img) {
+		this.img = img;
 	}
 
 }
