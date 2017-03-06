@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.List;
 
 @RestController
@@ -33,7 +35,7 @@ public class MessageController {
 	public ResponseEntity<Message> update(@RequestBody Message message) {
 		//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		//message.setTime(sdf.format(new Timestamp(System.currentTimeMillis())));
-		message.setTime(System.currentTimeMillis());
+		message.setTime(LocalDateTime.now(ZoneOffset.UTC));
 		repository.save(message);
 		return get(message.getId());
 	}

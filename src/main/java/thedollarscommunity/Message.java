@@ -3,6 +3,7 @@ package thedollarscommunity;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "globalchat")
@@ -14,8 +15,8 @@ public class Message {
 
 	@NotNull
 	private String nick;
-	@Min(0)
-	private long time;
+	@NotNull
+	private LocalDateTime time;
 	@NotNull
 	private boolean isimage;
 
@@ -33,10 +34,10 @@ public class Message {
 		this.nick = nick;
 	}
 
-	public long getTime() {
+	public LocalDateTime getTime() {
 		return time;
 	}
-	public void setTime(long time) {
+	public void setTime(LocalDateTime time) {
 		this.time = time;
 	}
 
