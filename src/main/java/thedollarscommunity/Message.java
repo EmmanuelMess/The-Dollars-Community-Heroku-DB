@@ -14,8 +14,8 @@ public class Message {
 
 	@NotNull
 	private String nick;
-	@NotNull
-	private String time;
+	@Min(0)
+	private long time;
 	@NotNull
 	private boolean isimage;
 
@@ -33,10 +33,10 @@ public class Message {
 		this.nick = nick;
 	}
 
-	public String getTime() {
+	public long getTime() {
 		return time;
 	}
-	public void setTime(String time) {
+	public void setTime(long time) {
 		this.time = time;
 	}
 

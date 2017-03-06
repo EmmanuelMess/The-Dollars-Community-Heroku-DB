@@ -31,8 +31,9 @@ public class MessageController {
 
 	@RequestMapping(value = "/new", method = RequestMethod.POST)
 	public ResponseEntity<Message> update(@RequestBody Message message) {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		message.setTime(sdf.format(new Timestamp(System.currentTimeMillis())));
+		//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		//message.setTime(sdf.format(new Timestamp(System.currentTimeMillis())));
+		message.setTime(System.currentTimeMillis());
 		repository.save(message);
 		return get(message.getId());
 	}
