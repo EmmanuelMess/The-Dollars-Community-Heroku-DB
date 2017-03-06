@@ -14,7 +14,7 @@ public class Message {
 
 	@NotNull
 	private String nick;
-	@Min(0)
+	@NotNull
 	private String time;
 	@NotNull
 	private boolean isimage;
