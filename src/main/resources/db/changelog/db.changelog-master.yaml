@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: 1
-      author: jkutner
+      author: emmanuelmess
       changes:
         - createTable:
             tableName: globalchat
