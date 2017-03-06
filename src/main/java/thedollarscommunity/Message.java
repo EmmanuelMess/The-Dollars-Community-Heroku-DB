@@ -1,12 +1,13 @@
 package thedollarscommunity;
 
-import javassist.bytecode.ByteArray;
-import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Message {
@@ -15,11 +16,11 @@ public class Message {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@NotEmpty
+	@NotNull
 	private String nick;
-	@NotEmpty
+	@Min(0)
 	private long time;
-	@NotEmpty
+	@NotNull
 	private boolean isimage;
 
 	private String msg;
