@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/globalchat")
+@RequestMapping("/message")
 public class MessageController {
 
 	private MessageRepository repository;
