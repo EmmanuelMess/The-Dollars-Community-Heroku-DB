@@ -1,5 +1,7 @@
 package thedollarscommunity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -16,6 +18,7 @@ public class Message {
 	@NotNull
 	private String nick;
 	@NotNull
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime time;
 	@NotNull
 	private boolean isimage;
