@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Entity
@@ -18,8 +19,7 @@ public class Message {
 	@NotNull
 	private String nick;
 	@NotNull
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-	private LocalDateTime time;
+	private Timestamp time;
 	@NotNull
 	private boolean isimage;
 
@@ -37,10 +37,10 @@ public class Message {
 		this.nick = nick;
 	}
 
-	public LocalDateTime getTime() {
+	public Timestamp getTime() {
 		return time;
 	}
-	public void setTime(LocalDateTime time) {
+	public void setTime(Timestamp time) {
 		this.time = time;
 	}
 

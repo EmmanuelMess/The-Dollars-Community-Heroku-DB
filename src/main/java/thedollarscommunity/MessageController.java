@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.List;
+import java.util.Locale;
 
 @RestController
 @RequestMapping("/message")
@@ -32,10 +33,10 @@ public class MessageController {
 	}
 
 	@RequestMapping(value = "/new", method = RequestMethod.POST)
-	public ResponseEntity<Message> update(@RequestBody Message message) {
+	public ResponseEntity<Message> update(@RequestBody Message message, @RequestBody Locale locale) {
 		//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		//message.setTime(sdf.format(new Timestamp(System.currentTimeMillis())));
-		message.setTime(LocalDateTime.now(ZoneOffset.UTC));
+		message.setTime(new Timestamp(System.currentTimeMillis()));
 		repository.save(message);
 		return get(message.getId());
 	}
