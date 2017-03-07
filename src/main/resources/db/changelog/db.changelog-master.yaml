@@ -15,7 +15,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: time
-                  type: timestampz
+                  type: timestamp
                   constraints:
                     nullable: false
               - column:
